@@ -80,17 +80,6 @@ echo "  • Sẽ backup: /home, /etc, /root, /var/www, /usr/local, /opt, /srv"
 echo "  • Loại trừ: cache, logs, temp files, system directories"
 echo ""
 
-# Double confirmation
-print_warning "Bạn có CHẮC CHẮN muốn tiếp tục backup NGAY BÂY GIỜ không?"
-echo -n -e "${YELLOW}Nhập 'YES' (viết hoa) để xác nhận: ${NC}"
-read confirmation
-echo ""
-
-if [ "$confirmation" != "YES" ]; then
-    print_status "Backup đã được HỦY bởi người dùng."
-    print_status "Không có gì được thay đổi trên hệ thống."
-    exit 0
-fi
 
 # Kiểm tra dung lượng
 print_status "Kiểm tra dung lượng ổ cứng..."
