@@ -54,11 +54,13 @@ print_important "KHÔNG có cron job, KHÔNG có lịch tự động"
 print_important "Hoàn toàn kiểm soát bởi người dùng"
 echo ""
 
-# Kiểm tra quyền
+# Kiểm tra quyền - Cho phép chạy với root
 if [[ $EUID -eq 0 ]]; then
-   print_error "Không chạy script này trực tiếp bằng root."
-   print_error "Hãy chạy bằng user thường, script sẽ tự động sudo khi cần."
-   exit 1
+   print_status "Đang chạy với quyền root - OK"
+   SUDO_PREFIX=""
+else
+   print_status "Đang chạy với user thường - Sẽ sử dụng sudo khi cần"
+   SUDO_PREFIX="sudo"
 fi
 
 # Hiển thị thông tin hệ thống
