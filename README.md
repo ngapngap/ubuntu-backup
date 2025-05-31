@@ -14,7 +14,7 @@ Script backup Ubuntu chỉ chạy khi người dùng thực thi thủ công.
 
 ### Bước 1: Tải về
 git clone https://github.com/ngapngap/ubuntu-backup.git
-cd ubuntu-manual-backup
+cd ubuntu-backup
 
 ### Bước 2: Cấp quyền
 ./manual-backup.sh
