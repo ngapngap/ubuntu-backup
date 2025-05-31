@@ -17,6 +17,10 @@ git clone https://github.com/ngapngap/ubuntu-backup.git
 cd ubuntu-backup
 
 ### Bước 2: Cấp quyền
+chmod +x manual-backup.sh
+
+### Bước 3: Chạy backup (chỉ khi bạn muốn)
+
 ./manual-backup.sh
 
 ## Kết quả backup
