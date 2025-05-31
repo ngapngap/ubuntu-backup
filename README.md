@@ -23,11 +23,41 @@ chmod +x manual-backup.sh
 
 ./manual-backup.sh
 
-## Kết quả backup
-- File backup: `/backup/ubuntu-backup-TIMESTAMP.tar.gz`
-- File log: `/backup/backup-TIMESTAMP.log`
-- Script restore: `/backup/restore-TIMESTAMP.sh`
+**Lưu ý:** Script sẽ hỏi xác nhận và yêu cầu gõ "YES" trước khi bắt đầu.
 
+## 📁 Backup bao gồm
+
+✅ **User Data:**
+- `/home` - Tất cả dữ liệu người dùng
+- `/root` - Dữ liệu root user
+
+✅ **System Configuration:**  
+- `/etc` - Cấu hình hệ thống
+- `/usr/local` - Phần mềm cài thủ công
+- `/opt` - Ứng dụng optional
+
+✅ **Web & Services:**
+- `/var/www` - Web server files
+- `/srv` - Service data
+
+❌ **Loại trừ:**
+- Cache files, logs, temp files
+- Virtual filesystems (/proc, /sys, /dev)
+- Mount points, snap packages
+
+## 🔄 Khôi phục dữ liệu
+
+Script tự động tạo restore script:
+
+
+## 📊 Kết quả backup
+
+Sau khi chạy, bạn sẽ có 4 files:
+/backup/
+├── manual-backup-TIMESTAMP.tar.gz # File backup chính
+├── backup-log-TIMESTAMP.txt # Log chi tiết
+├── backup-info-TIMESTAMP.txt # Thông tin backup
+└── restore-TIMESTAMP.sh # Script khôi phục
 ## Khôi phục dữ liệu
 sudo ./restore-TIMESTAMP.sh backup-file.tar.gz
 
